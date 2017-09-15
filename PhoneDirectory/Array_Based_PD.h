@@ -56,22 +56,34 @@ private:
 	class Directory_Entry
 	{
 	public:
+		//Team member:  Alyssa La Fleur
+		//Finishing Step 5:  Ex 1.6
+
 		Directory_Entry() {} // Default no-argument constructor
+		
+		//Constructor which makes new entry using a name and number
 		Directory_Entry(std::string the_name, std::string the_number) {
-			// constructor not implemented yet
+			name = the_name;
+			number = the_number;
 		}
+
+		//Getter for name
 		std::string get_name() const {
-			return ""; // method not implemented yet
+			return name; 
 		}
+
+		//Getter for number
 		std::string get_number() const {
-
-			return ""; // method not implemented yet
-
+			return number; 
 		}
+
+		//Setter for number
 		void set_number(const std::string& new_number) {
-			// method not implemented yet
+			number = new_number;
 		}
 	private:  
+		std::string name;
+		std::string number;
 	};
 
 	// Private Functions
