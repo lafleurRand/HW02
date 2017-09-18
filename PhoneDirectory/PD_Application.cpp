@@ -85,13 +85,19 @@ void do_lookup_entry(Phone_Directory& the_directory)
 	}
 }
 
+//Alyssa La Fleur
+//Ex. 1.8 HMWRK #2
+//CS-273
 void do_remove_entry(Phone_Directory& the_directory) // Exercise 1.8: please complete the function do_remove_entry - Ed/Kent
 {
 	string name;
 	cout << "Enter name: ";
 	getline(cin, name);
-	// Complete the rest of this function 
-	
+	//Added line to call remove_entry function on the_directory
+	string confirmation;
+	confirmation = the_directory.remove_entry(name);
+	//Outputting confirmation of removed name/ empty space which is the output of remove_entry
+	cout << "Name to be removed: " << name << "." << "  Name that was removed: " << confirmation << " (note that a blank removed name means the given name was not in the directory)" << endl;
 }
 
 void do_save(Phone_Directory& the_directory)
