@@ -113,14 +113,26 @@ void Phone_Directory::save()
 	@return That person's name or an empty string
 	if not in the directory
 	*/
+
+//Alyssa La Fleur
+//Ex 1.8
+//
 string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please complete the remove_entry() method - Ed/Kent
 {
-
-	// Hint: you can use the code below to shift names down in the directory to remove the selected entry specified by "index"
-	// for (int i = index; i < size - 1; i++)
-		// the_directory[i] = the_directory[i + 1];
-
-	return "";
+	//Finding if name is in directory
+	int index = this->find(name);
+	string get_back = "";
+	//If the name is in the directory
+	if (index != -1) {
+		//Sets the return value to the name given
+		get_back = name;
+		//Move name in directory to the end of the directory to remove 
+		for (int i = index; i < size - 1; i++) {
+			the_directory[i] = the_directory[i + 1];
+		}
+	}
+	//Returns "" if name not found, name if the name is found and removed
+	return get_back;
 }
 
 // Private method implementation
