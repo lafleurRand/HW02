@@ -126,10 +126,15 @@ string Phone_Directory::remove_entry(const string& name) // Exercise 1.7: please
 	if (index != -1) {
 		//Sets the return value to the name given
 		get_back = name;
-		//Move name in directory to the end of the directory to remove 
-		for (int i = index; i < size - 1; i++) {
-			the_directory[i] = the_directory[i + 1];
+		//To avoid out of bounds error, check if the index is the last listed position in the directory
+		if (index != size - 1) {
+			//Move name in directory to the end of the directory to remove 
+			for (int i = index; i < size - 1; i++) {
+				the_directory[i] = the_directory[i + 1];
+			}
 		}
+		//decrease size of the directory
+		size--;
 	}
 	//Returns "" if name not found, name if the name is found and removed
 	return get_back;
